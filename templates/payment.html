@@ -1,0 +1,30 @@
+{% extends "based.html" %}
+{% block content %}
+    <div class="payment">
+      <div class="card text-white bg-dark mb-3">
+        <div class="card-header">payment</div>
+        <div class="card-body">
+          {% for i in data %}
+            <h5 class="card-title">{{i.name}} ({{i.amount}})</h5>
+            <p class="card-text">Cost :${{i.cost}}</p>
+          {% endfor %}
+          <p>Total : ${{total}}</p>
+        </div>
+      </div>
+        <div class="input-group mb-3">
+            <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+            <input type="text" class="form-control" placeholder="name" aria-label="name" aria-describedby="basic-addon1">
+          </div>
+        <div class="input-group mb-3">
+            <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+            <input type="text" class="form-control" placeholder="location" aria-label="location" aria-describedby="basic-addon1">
+          </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">+62</span>
+            <input type="text" class="form-control" placeholder="phone number" aria-label="phone number" aria-describedby="basic-addon1">
+          </div>
+        <div class="pay-btn">
+          <a class="btn btn-success pay-btn-a" href="{{url_for('done')}}">pay ${{total}}</a>
+        </div>
+    </div>
+{% endblock %}

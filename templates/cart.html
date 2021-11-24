@@ -1,0 +1,33 @@
+{% extends "based.html" %}
+{% block content %}
+    <section id="cart">
+      {% if data == [] %}
+      <h1 class="empty-cart">stil empty...</h1>
+      {% else %}
+      {% for i in data %}
+      <div class="card mb-3" style="max-width: 900px; min-width: 300px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{i.path}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title cart-title">{{i.name}}</h5>
+              <p class="card-text">Amount : {{i.amount}}</p>
+              <p class="card-text">${{i.cost}}</p>
+              <a href="{{url_for('delete', id=i.id)}}" class="btn btn-danger">Delete all</a>
+              {% if i.amount > "1" %}
+              <a href="{{url_for('delete_1_item', id=i.id)}}" class="btn btn-warning">Delete 1</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="pay-btn">
+        <a class="btn btn-success pay-btn-a" href="{{url_for('payment')}}">pay ${{total}}</a>
+      </div>
+      {% endif %}
+      
+    </section>
+{% endblock %}
