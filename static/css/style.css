@@ -36,12 +36,16 @@ body{
 }
 
 .design_card{
-    margin: 20px 15px;
+    margin: 20px;
 }
 
 #cart{
     text-align: center;
     padding: 40px auto;
+}
+
+.card-cart{
+    margin: 10px 20px;
 }
 
 .cart-title{
@@ -67,7 +71,10 @@ body{
 }
 
 .done{
-    padding: 10px;
+    padding: 10px 20px;
     text-align: center;
 }
 
+.delete-1-btn{
+    margin-top: 10px;
+}
