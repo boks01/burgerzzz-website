@@ -35,9 +35,9 @@ body{
     padding: 10px;
 }
 
-/* .design_card{
-    margin: 10px 30px;
-} */
+.design_card{
+    margin: 20px 20px 0 0 ;
+}
 
 #cart{
     text-align: center;
