@@ -106,5 +106,11 @@ def cart():
         db.session.add(new_data)
         db.session.commit()
     return render_template("index.html", data=data)
+
+@app.route("/ex")
+def ex():
+    return render_template('ex.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
